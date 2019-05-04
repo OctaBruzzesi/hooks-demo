@@ -1,26 +1,41 @@
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+
 import logo from './logo.svg';
+import WithHooks from './WithHooks';
+import WithoutHooks from './WithoutHooks';
 import './App.css';
 
-function App() {
+const styles = {
+  gridContainer: {
+    display: 'flex',
+    justifyContent: 'space-around',
+  },
+};
+
+function App(props) {
+  const { classes } = props;
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <Grid>
+        <Grid
+          container
+          className={classes.gridContainer}
+        >
+          <Grid item md={4}>
+            <WithoutHooks />
+          </Grid>
+          <Grid item md={4}>
+            <WithHooks />
+          </Grid>
+        </Grid>
+      </Grid>
     </div>
   );
 }
 
-export default App;
+export default withStyles(styles)(App);
