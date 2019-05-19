@@ -5,21 +5,19 @@ import Card from '../components/Card';
 
 class Second extends Component {
   state = {
-    inputValues: {
-      firstInput: '',
-      secondInput: '',
-      thirdInput: '',
-    }
+    firstInput: '',
+    secondInput: '',
+    thirdInput: '',
   }
 
   handleInput(e, input) {
-    this.setState({ inputValues: {
+    this.setState({
       [input]: e.target.value,
-    }});
+    });
   }
 
   render() {
-    const { firstInput, secondInput, thirdInput } = this.state.inputValues;
+    const { firstInput, secondInput, thirdInput } = this.state;
     return (
       <Card>
         <TextField
