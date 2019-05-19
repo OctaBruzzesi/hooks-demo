@@ -7,6 +7,7 @@ const styles = {
   card: {
     minWidth: 275,
     padding: 30,
+    height: '150px',
   },
 };
 

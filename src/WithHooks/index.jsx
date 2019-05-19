@@ -4,7 +4,6 @@ import Second from './Second';
 import Third from './Third'
 
 const WithHooks = ({ level }) => {
-
   return (
     <Fragment>
       <First />

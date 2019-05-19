@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import logo from './logo.svg';
 import WithHooks from './WithHooks';
 import WithoutHooks from './WithoutHooks';
+import Titles from './components/Titles';
 import './App.css';
 
 const styles = {
@@ -31,10 +32,13 @@ const App = (props) => {
           container
           className={classes.gridContainer}
         >
-          <Grid item md={4}>
+          <Grid item md={3}>
+            <Titles level={level}/>
+          </Grid>
+          <Grid item md={3}>
             <WithoutHooks level={level}/>
           </Grid>
-          <Grid item md={4}>
+          <Grid item md={3}>
             <WithHooks level={level}/>
           </Grid>
         </Grid>
