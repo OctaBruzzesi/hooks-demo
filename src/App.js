@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 
 import logo from './logo.svg';
 import WithHooks from './WithHooks';
@@ -12,9 +13,13 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-around',
   },
+  button: {
+    background: 'blue',
+  },
 };
 
-function App(props) {
+const App = (props) => {
+  const [level, setLevel] = useState(0);
   const { classes } = props;
   return (
     <div className="App">
@@ -27,12 +32,18 @@ function App(props) {
           className={classes.gridContainer}
         >
           <Grid item md={4}>
-            <WithoutHooks />
+            <WithoutHooks level={level}/>
           </Grid>
           <Grid item md={4}>
-            <WithHooks />
+            <WithHooks level={level}/>
           </Grid>
         </Grid>
+        <Button
+          variant="contained"
+          onClick={() => setLevel(level + 1)}
+        >
+          Next
+        </Button>
       </Grid>
     </div>
   );

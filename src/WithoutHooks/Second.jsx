@@ -1,0 +1,45 @@
+import React, { Component } from 'react';
+import TextField from '@material-ui/core/TextField';
+
+import Card from '../components/Card';
+
+class Second extends Component {
+  state = {
+    inputValues: {
+      firstInput: '',
+      secondInput: '',
+      thirdInput: '',
+    }
+  }
+
+  handleInput(e, input) {
+    this.setState({ inputValues: {
+      [input]: e.target.value,
+    }});
+  }
+
+  render() {
+    const { firstInput, secondInput, thirdInput } = this.state.inputValues;
+    return (
+      <Card>
+        <TextField
+          label="Number One"
+          value={firstInput}
+          onChange={(e) => this.handleInput(e, 'firstInput')}
+        />
+        <TextField
+          label="Number Two"
+          value={secondInput}
+          onChange={(e) => this.handleInput(e, 'secondInput')}
+        />
+        <TextField
+          label="Number Three"
+          value={thirdInput}
+          onChange={(e) => this.handleInput(e, 'thirdInput')}
+        />
+      </Card>
+    )
+  }
+}
+
+export default Second;
