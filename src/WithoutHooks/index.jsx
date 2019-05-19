@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import First from './First';
 import Second from './Second';
+import Third from './Third';
 
 class WithoutHooks extends Component {
   render() {
@@ -12,6 +13,10 @@ class WithoutHooks extends Component {
         {
           level > 0 &&
             <Second />
+        }
+        {
+          level > 1 &&
+            <Third />
         }
       </Fragment>
     )
