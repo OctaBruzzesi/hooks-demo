@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import Container from '../components/Container';
 import First from './First';
 import Second from './Second';
 import Third from './Third'
@@ -6,14 +7,22 @@ import Third from './Third'
 const WithHooks = ({ level }) => {
   return (
     <Fragment>
-      <First />
+      <Container>
+        <First />
+      </Container>
       {
-        level > 0 &&
-          <Second />
+        level > 0 && (
+          <Container>
+            <Second />
+          </Container>
+        )
       }
       {
-        level > 1 &&
-          <Third />
+        level > 1 && (
+          <Container>
+            <Third />
+          </Container>
+        )
       }
     </Fragment>
   )

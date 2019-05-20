@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from './Card';
+import Container from './Container';
 
 const styles = {};
 
@@ -10,20 +11,26 @@ const CardCustom = (props) => {
 
   return (
     <Fragment>
-      <Card>
-        First Level
-      </Card>
+      <Container>
+        <Card>
+          First Level
+        </Card>
+      </Container>
       {
         level > 0 &&
-        <Card>
-          Second Level
-        </Card>
+        <Container>
+          <Card>
+            Second Level
+          </Card>
+        </Container>
       }
       {
         level > 1 &&
-        <Card>
-          Third Level
-        </Card>
+        <Container>
+          <Card>
+            Third Level
+          </Card>
+        </Container>
       }
     </Fragment>
   );
