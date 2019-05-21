@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-
   class TodoForm extends Component {
     constructor(props) {
       super(props);
@@ -27,7 +26,6 @@ import TextField from '@material-ui/core/TextField';
     };
   
   render() {
-    // const addTodo =this.props
 
     return (
       <div>

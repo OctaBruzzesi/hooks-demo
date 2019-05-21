@@ -23,16 +23,6 @@ const Todo = ({ index, todo, completeTodo, deleteTodo }) => (
   </div>
 );
 
-/*<Button
-    variant="outlined"
-      onClick={() => {
-        completeTodo(index);
-      }}
-    >
-    Complete
-    </Button>
-    */
-
 const styles = {
   ContainerStyle: {
     padding: 12,

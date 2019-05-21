@@ -37,7 +37,7 @@ class Fourth extends Component {
           <h3 style={styles.formTitles}>
             Todo's list
           </h3>
-          { this.state.todos === [] ? (
+          { !this.state.todos ? (
             <p> Loading ...</p>
           ) : (
             <TodosList todos={this.state.todos} completeTodo={this.todoComplete} deleteTodo={()=> console.log('delete')} />

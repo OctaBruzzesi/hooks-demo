@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const getFetchUrl = () => 'https://jsonplaceholder.typicode.com/todos/';
+const getFetchUrl = () => 'https://jsonplaceholder.typicode.com/todos?_limit=10';
 
 const useFetch = () => {
   const [todos, setTodos] = useState([]);
