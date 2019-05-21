@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
   container: {
-    height: 250,
+    height: 400,
   },
 };
 

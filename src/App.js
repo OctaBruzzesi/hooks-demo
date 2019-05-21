@@ -15,8 +15,11 @@ const styles = {
     justifyContent: 'space-around',
   },
   button: {
-    background: 'blue',
+    background: '#84EEFF',
   },
+  headers : {
+    color: '#84EEFF'
+  }
 };
 
 const App = (props) => {
@@ -33,17 +36,23 @@ const App = (props) => {
           className={classes.gridContainer}
         >
           <Grid item md={3}>
-            <Titles level={level}/>
+          <h2 className={classes.headers}>Hook Type</h2>
+            <Titles
+            level={level}
+            />
           </Grid>
           <Grid item md={3}>
+            <h2 className={classes.headers}>Without Hooks</h2>
             <WithoutHooks level={level}/>
           </Grid>
           <Grid item md={3}>
+          <h2 className={classes.headers}> With Hooks</h2>
             <WithHooks level={level}/>
           </Grid>
         </Grid>
         <Button
           variant="contained"
+          className={classes.button}
           onClick={() => setLevel(level + 1)}
         >
           Next
