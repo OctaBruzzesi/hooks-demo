@@ -14,20 +14,17 @@ class Fourth extends Component {
        .then(json => this.setState({ todos: json }))
        .catch(e => console.log(e));
   }
-
-  // Toggle Complete
-  todoComplete = (id) => {
-    this.setState({ todos: this.state.todos.map(todo => {
-      if(todo.id - 1 === id) {
-        todo.completed = !todo.completed
-      }
-      return todo;
-    }) });
-  }
-// Add Todo
   addTodo = (title) => {
-    this.setState ({ todos: [...this.state.todos, {title,id:this.state.todos.length + 1, completed:false}]})
+  const newTodos = [...this.state.todos, {title}];
+  this.setState({todos: newTodos})
+}
+
+  todoComplete = (id) => {
+    const newTodos = [...this.state.todos]
+    newTodos[id].completed = !this.state.todos[id].completed
+    this.setState({todos: newTodos})
   }
+
 
   render() {
       return (
