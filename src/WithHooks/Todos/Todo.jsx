@@ -3,7 +3,7 @@ import ListItem from '@material-ui/core/ListItem';
 import Button from '@material-ui/core/Button';
 
 
-const Todo = ({ index, todo, completeTodo, deleteTodo }) => (
+const Todo = ({ index, todo, completeTodo }) => (
   <div style={styles.ContainerStyle}>
     <ListItem>
     <p style ={{ textDecorationLine: todo.completed ? 'line-through': 'none'}}>

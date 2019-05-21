@@ -11,15 +11,11 @@ const Fourth = () => {
     const addTodo = title => {
       const newTodos = [...todos, { title }];
       setTodos(newTodos);
+
     };
     const completeTodo = index => {
       const newTodos = [...todos];
       newTodos[index].completed = !todos[index].completed;
-      setTodos(newTodos);
-    };
-    const deleteTodo = index => {
-      const newTodos = [...todos];
-      newTodos.splice(index, 1);
       setTodos(newTodos);
     };
 
@@ -33,7 +29,7 @@ const Fourth = () => {
       { loading ? (
         <p> Loading ...</p>
       ) : (
-        <TodosList todos={todos} completeTodo={completeTodo} deleteTodo={deleteTodo} />
+        <TodosList todos={todos} completeTodo={completeTodo} />
       )}
       <div >
         <TodoForm addTodo={addTodo} />

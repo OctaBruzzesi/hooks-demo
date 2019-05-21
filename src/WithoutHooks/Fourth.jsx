@@ -26,9 +26,9 @@ class Fourth extends Component {
   }
 // Add Todo
   addTodo = (title) => {
-    this.setState ({ todos: [...this.state.todos, {title, completed:false}]})
+    this.setState ({ todos: [...this.state.todos, {title,id:this.state.todos.length + 1, completed:false}]})
   }
-  
+
   render() {
       return (
         <Fragment>
@@ -40,7 +40,7 @@ class Fourth extends Component {
           { !this.state.todos ? (
             <p> Loading ...</p>
           ) : (
-            <TodosList todos={this.state.todos} completeTodo={this.todoComplete} deleteTodo={()=> console.log('delete')} />
+            <TodosList todos={this.state.todos} completeTodo={this.todoComplete} />
           )}
           <div >
             <TodoForm addTodo={this.addTodo} />
@@ -49,7 +49,7 @@ class Fourth extends Component {
           </Card>
         </Fragment>
       )
-    
+
   }
 }
 
