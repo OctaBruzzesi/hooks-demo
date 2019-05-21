@@ -1,10 +1,8 @@
 import React from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import Button from '@material-ui/core/Button';
-//TODO: change to state
 
-
-const Todo = ({ index, todo, completeTodo, deleteTodo }) => (
+const Todo = ({ index, todo, completeTodo }) => (
   <div style={styles.ContainerStyle}>
     <ListItem>
     <p style ={{ textDecorationLine: todo.completed ? 'line-through': 'none'}}>
@@ -23,16 +21,6 @@ const Todo = ({ index, todo, completeTodo, deleteTodo }) => (
     </Button>
   </div>
 );
-
-/*<Button
-    variant="outlined"
-      onClick={() => {
-        completeTodo(index);
-      }}
-    >
-    Complete
-    </Button>
-    */
 
 const styles = {
   ContainerStyle: {

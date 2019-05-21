@@ -17,30 +17,18 @@ class Fourth extends Component {
 
   // Toggle Complete
   todoComplete = (id) => {
-    console.log(id)
     this.setState({ todos: this.state.todos.map(todo => {
-
       if(todo.id - 1 === id) {
         todo.completed = !todo.completed
       }
       return todo;
-    },console.log(this.state.todos)) });
+    }) });
   }
-
-  // Delete Todo
-  // deleteTodo = (id) => {
-  //   axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
-  //     .then(res => this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] }));
-  // }
-
-  // // Add Todo
-  // addTodo = (title) => {
-  //   axios.post('https://jsonplaceholder.typicode.com/todos', {
-  //     title,
-  //     completed: false
-  //   })
-  //     .then(res => this.setState({ todos: [...this.state.todos, res.data] }));
-  // }
+// Add Todo
+  addTodo = (title) => {
+    this.setState ({ todos: [...this.state.todos, {title, completed:false}]})
+  }
+  
   render() {
       return (
         <Fragment>
@@ -49,13 +37,13 @@ class Fourth extends Component {
           <h3 style={styles.formTitles}>
             Todo's list
           </h3>
-          { this.state.todos === undefined ? (
+          { this.state.todos === [] ? (
             <p> Loading ...</p>
           ) : (
-            <TodosList todos={this.state.todos} completeTodo={this.todoComplete} deleteTodo={()=> console.log('nada')} />
+            <TodosList todos={this.state.todos} completeTodo={this.todoComplete} deleteTodo={()=> console.log('delete')} />
           )}
           <div >
-            <TodoForm addTodo={()=> console.log('nada')} />
+            <TodoForm addTodo={this.addTodo} />
           </div>
         </div>
           </Card>
@@ -64,24 +52,6 @@ class Fourth extends Component {
     
   }
 }
-
-
-    // const [todos, loading, setTodos] = useFetch();
-    // const addTodo = title => {
-    //   const newTodos = [...todos, { title }];
-    //   setTodos(newTodos);
-    // };
-    // const completeTodo = index => {
-    //   const newTodos = [...todos];
-    //   newTodos[index].completed = !todos[index].completed;
-    //   setTodos(newTodos);
-    // };
-    // const deleteTodo = index => {
-    //   const newTodos = [...todos];
-    //   newTodos.splice(index, 1);
-    //   setTodos(newTodos);
-    // };
-  
 
 const styles = {
     container: {

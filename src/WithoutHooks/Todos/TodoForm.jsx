@@ -1,35 +1,53 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-//TODO: change to state
 
-const TodoForm = ({ addTodo }) => {
-  const [value, setValue] = useState('');
-  const handleSubmit = event => {
-    event.preventDefault();
-    if (!value) return;
-    addTodo(value);
-    setValue('');
-  };
-  return (
-    <div>
-         <TextField
-          label="...add Todo"
-          value={value}
-          onChange={event => setValue(event.target.value)}
-        />
 
-    <Button
-      variant="outlined"
-      color="secondary"
-      style ={{marginTop: 15, marginLeft: 2}}
-      onClick={(event) => {
-        handleSubmit(event);
-      }}
-    >
-    Add
-    </Button>
-    </div>
-  );
-};
+  class TodoForm extends Component {
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        value: '',
+      }
+  
+      this.handleInput = this.handleInput.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+
+    }
+    handleInput (event)  {
+      this.setState({ value: event.target.value });
+  
+    }
+  
+     handleSubmit(event)  {
+      event.preventDefault();
+      if (!this.state.value) return;
+      this.props.addTodo(this.state.value);
+    };
+  
+  render() {
+    // const addTodo =this.props
+
+    return (
+      <div>
+           <TextField
+            label="...add Todo"
+            value={this.state.value}
+            onChange={this.handleInput}
+          />
+  
+      <Button
+        variant="outlined"
+        color="secondary"
+        style ={{marginTop: 15, marginLeft: 2}}
+        onClick={this.handleSubmit}
+      >
+      Add
+      </Button>
+      </div>
+    );
+  }
+}
+
 export default TodoForm;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import List from '@material-ui/core/List';
-//TODO: change to state
 
 import Todo from './Todo';
 
